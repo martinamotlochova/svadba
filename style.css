@@ -1,0 +1,252 @@
+/* =========================================================
+   Svadobný web – Martina && Filip
+   Farby a písma sú na jednom mieste v :root,
+   takže ich zmeníš na jednom riadku pre celý web.
+   ========================================================= */
+
+:root {
+  --papier: #FBF7EF;      /* pozadie */
+  --papier-tmavsi: #F6EFE2;
+  --text: #3A3632;        /* hlavný text */
+  --text-jemny: #6B655D;  /* štítky, poznámky */
+  --med: #B0683A;         /* medená – cestičky, && , tlačidlá */
+  --linka: #E2D6C2;       /* tenké oddeľovacie čiary */
+
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --serif: 'IBM Plex Serif', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--text);
+  font-family: var(--mono);
+  line-height: 1.6;
+}
+
+a { color: var(--med); }
+
+/* ---------- spoločné štýly ---------- */
+
+/* Pätkové písmo kurzívou = pocity (vety, nadpisy) */
+.pocit,
+.nadpis,
+.hero__mena,
+.paticka__nadpis {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.pocit {
+  max-width: 34rem;
+  margin: 1.25rem auto 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.amp {
+  font-family: var(--mono);
+  font-style: normal;
+  font-weight: 500;
+  color: var(--med);
+}
+
+.stitok {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-jemny);
+}
+
+.nadpis {
+  margin: 0.6rem 0 0;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  line-height: 1.1;
+}
+
+.poznamka,
+.komentar {
+  margin: 1.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-jemny);
+}
+
+.tlacidlo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 2rem;
+  padding: 0 1.75rem;
+  border-radius: 999px;
+  background: var(--med);
+  color: #FFFDF8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.tlacidlo:hover { opacity: 0.85; }
+
+/* ---------- navigácia ---------- */
+
+.nav { border-bottom: 1px solid var(--linka); }
+
+.nav__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+}
+
+.nav__logo {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav__logo .amp { font-size: 0.95rem; }
+
+.nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+.nav__links a {
+  padding: 0.6rem 0;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav__links a:hover { color: var(--med); }
+.nav__links .nav__cta { color: var(--med); font-weight: 500; }
+
+/* ---------- úvod ---------- */
+
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5.5rem;
+  text-align: center;
+}
+
+.hero__kytica {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero__mena {
+  margin: 2.25rem 0 0;
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  line-height: 1.1;
+}
+.hero__mena .amp { font-size: 0.42em; margin: 0 0.3em; vertical-align: middle; }
+
+.hero__veta { font-size: clamp(1.15rem, 3vw, 1.35rem); }
+
+.hero__datum {
+  margin: 1.75rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.hero__miesto {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--text-jemny);
+}
+
+/* ---------- sekcie ---------- */
+
+.sekcia { border-top: 1px solid var(--linka); }
+.sekcia--tonovana { background: var(--papier-tmavsi); }
+
+.sekcia__obsah {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem;
+  text-align: center;
+}
+.sekcia__obsah--siroka { max-width: 880px; }
+
+.adresa { margin: 1rem 0 0; font-size: 0.95rem; }
+
+/* ---------- program ---------- */
+
+.program {
+  list-style: none;
+  margin: 2.75rem 0 0;
+  padding: 0;
+  text-align: left;
+}
+.program li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1.25rem;
+  align-items: baseline;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--linka);
+}
+.program__cas { font-size: 1.05rem; font-weight: 500; color: var(--med); }
+.program__co {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+/* ---------- mapa a formulár ---------- */
+
+.mapa {
+  display: block;
+  width: 100%;
+  height: 360px;
+  margin-top: 2.25rem;
+  border: 0;
+  border-radius: 12px;
+}
+
+.formular { margin-top: 2.5rem; min-height: 420px; }
+
+/* Dočasný rámik, kým nevložíš skutočnú mapu / formulár */
+.mapa--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #CDBFA8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-jemny);
+}
+
+/* ---------- pätička ---------- */
+
+.paticka {
+  border-top: 1px solid var(--linka);
+  padding: 4.5rem 1.5rem 4rem;
+  text-align: center;
+}
+.paticka__hanae { width: 96px; height: 96px; }
+.paticka__nadpis { margin: 0.5rem 0 0; font-size: 1.9rem; }
+.paticka .komentar { margin-top: 0.4rem; }
