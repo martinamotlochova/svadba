@@ -6,10 +6,10 @@
   <title>Martina &amp; Filip · 15. 5. 2027</title>
   <meta name="description" content="Svadba Martiny a Filipa – Kaštieľ v Krasňanoch, 15. 5. 2027">
 
-  <!-- Písma z Google Fonts: IBM Plex Mono (fakty) + IBM Plex Serif (pocity) -->
+  <!-- Písma: Great Vibes (písané – mená a nadpisy) + Mulish (všetko ostatné) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mulish:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,7 +18,7 @@
   <!-- ===== NAVIGÁCIA ===== -->
   <nav class="nav" aria-label="Hlavná navigácia">
     <div class="nav__inner">
-      <a href="#domov" class="nav__logo">M <span class="amp">&amp;&amp;</span> F</a>
+      <a href="#domov" class="nav__logo">M &amp; F</a>
       <div class="nav__links">
         <a href="#program">Program</a>
         <a href="#miesto">Miesto</a>
@@ -31,27 +31,30 @@
 
   <!-- ===== ÚVOD ===== -->
   <header id="domov" class="hero">
-    <img src="images/kytica.svg" alt="" class="hero__kytica">
+    <img src="images/luka.svg" alt="" class="hero__luka">
 
     <h1 class="hero__mena">Martina <span class="amp">&amp;&amp;</span> Filip</h1>
 
-    <p class="pocit hero__veta">
-      S radosťou oznamujeme, že nechceme žiť jeden bez druhého,
-      a preto si povieme svoje áno.
+    <p class="hero__veta">
+      si dovoľujú oznámiť, že na spoločnú cestu životom vykročia dňa
     </p>
 
-    <p class="hero__datum">15.05.2027 · 14:00</p>
+    <div class="datum">
+      <span class="datum__ciara"></span>
+      <p>15. mája 2027 · 14:00</p>
+      <span class="datum__ciara"></span>
+    </div>
     <p class="hero__miesto">Kaštieľ v Krasňanoch</p>
 
     <!-- Číslo dopĺňa script.js -->
-    <p class="komentar">// do svadby zostáva <span id="odpocet">…</span> dní</p>
+    <p class="poznamka">Do svadby zostáva <span id="odpocet">…</span> dní</p>
 
     <a href="#rsvp" class="tlacidlo">Potvrdiť účasť</a>
   </header>
 
   <!-- ===== PROGRAM ===== -->
-  <section id="program" class="sekcia">
-    <div class="sekcia__obsah">
+  <section id="program" class="sekcia sekcia--tonovana">
+    <div class="sekcia__obsah sekcia__obsah--siroka">
       <p class="stitok">Program</p>
       <h2 class="nadpis">Náš deň</h2>
 
@@ -72,8 +75,8 @@
     <div class="sekcia__obsah sekcia__obsah--siroka">
       <p class="stitok">Miesto</p>
       <h2 class="nadpis">Kaštieľ v Krasňanoch</h2>
-      <p class="adresa">[Adresa kaštieľa]</p>
-      <p class="pocit">Obrad, hostina aj zábava budú na jednom mieste – nikam sa nepresúvame.</p>
+      <p class="text">[Adresa kaštieľa]</p>
+      <p class="text">Obrad, hostina aj zábava budú na jednom mieste – nikam sa nepresúvame.</p>
 
       <!--
         MAPA: Na Google Maps nájdi kaštieľ → Zdieľať → Vložiť mapu → skopíruj <iframe>
@@ -86,11 +89,11 @@
   </section>
 
   <!-- ===== UBYTOVANIE ===== -->
-  <section id="ubytovanie" class="sekcia">
+  <section id="ubytovanie" class="sekcia sekcia--tonovana">
     <div class="sekcia__obsah">
       <p class="stitok">Ubytovanie</p>
       <h2 class="nadpis">Zostaňte s nami</h2>
-      <p class="pocit">
+      <p class="text">
         Pre tých, ktorým sme ubytovanie ponúkli, je na noc z 15. na 16. mája
         pripravená izba priamo na kaštieli. Vo formulári nám prosím dajte vedieť, či prespíte.
       </p>
@@ -103,7 +106,7 @@
     <div class="sekcia__obsah">
       <p class="stitok">Dary</p>
       <h2 class="nadpis">Stačí, že prídete</h2>
-      <p class="pocit">
+      <p class="text">
         Najväčším darom bude, že tento deň strávite s nami. Nič nepotrebujeme –
         ak by ste nás však chceli obdarovať, potešíme sa príspevku do rozpočtu
         na náš spoločný život.
@@ -118,14 +121,6 @@
       <h2 class="nadpis">Prídete?</h2>
       <p class="poznamka">Prosíme, odpovedzte do [dátum].</p>
 
-      <!--
-        FORMULÁR Z TALLY:
-        1. Na tally.so vytvor formulár s otázkami:
-           Meno a priezvisko · Prídete? (Áno / Nie) · Počet osôb ·
-           Prespíte na kaštieli? (Áno / Nie) · Strava a alergie · Odkaz pre nás
-        2. Publish → Embed → Standard → skopíruj kód
-        3. Vlož ho sem namiesto <div class="formular">…</div>
-      -->
       <div class="formular">
         <iframe data-tally-src="https://tally.so/embed/PR9lM0?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="697" frameborder="0" marginheight="0" marginwidth="0" title="Potvrdenie účasti"></iframe>
       </div>
@@ -136,7 +131,7 @@
   <footer class="paticka">
     <img src="images/hanae.svg" alt="" class="paticka__hanae">
     <p class="paticka__nadpis">Tešíme sa na vás</p>
-    <p class="komentar">Martina, Filip + Hanae</p>
+    <p class="poznamka">Martina, Filip a Hanae</p>
     <p class="poznamka">Otázky? Napíšte nám na [e-mail] alebo zavolajte na [telefón].</p>
   </footer>
 

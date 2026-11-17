@@ -1,19 +1,24 @@
 /* =========================================================
-   Svadobný web – Martina && Filip
+   Svadobný web – Martina & Filip (lúčna verzia)
    Farby a písma sú na jednom mieste v :root,
    takže ich zmeníš na jednom riadku pre celý web.
    ========================================================= */
 
 :root {
-  --papier: #FBF7EF;      /* pozadie */
-  --papier-tmavsi: #F6EFE2;
-  --text: #3A3632;        /* hlavný text */
-  --text-jemny: #6B655D;  /* štítky, poznámky */
-  --med: #B0683A;         /* medená – cestičky, && , tlačidlá */
-  --linka: #E2D6C2;       /* tenké oddeľovacie čiary */
+  --papier: #FFFFFF;          /* pozadie */
+  --papier-tonovany: #F8F6F0; /* jemne teplé pozadie každej druhej sekcie */
+  --text: #4A3F35;            /* hlavný text */
+  --text-jemny: #6E6358;      /* štítky, poznámky */
+  --broskyna: #C9775A;        /* && a drobné akcenty */
+  --tlacidlo: #B5654A;        /* tlačidlá, časy v programe */
+  --linka: #E8E6DA;           /* tenké oddeľovacie čiary */
+  --salvia: #D5D9C9;          /* čiarky pri dátume */
 
-  --mono: 'IBM Plex Mono', ui-monospace, monospace;
-  --serif: 'IBM Plex Serif', Georgia, serif;
+  /* Písané písmo na mená a nadpisy – vymeň za
+     'Parisienne', 'Allura', 'Alex Brush' alebo 'Pinyon Script'
+     (a uprav aj odkaz na Google Fonts v index.html) */
+  --pismo-pisane: 'Great Vibes', cursive;
+  --pismo: 'Mulish', system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -24,72 +29,68 @@ body {
   margin: 0;
   background: var(--papier);
   color: var(--text);
-  font-family: var(--mono);
+  font-family: var(--pismo);
+  font-weight: 400;
   line-height: 1.6;
 }
 
-a { color: var(--med); }
+a { color: var(--tlacidlo); }
 
 /* ---------- spoločné štýly ---------- */
 
-/* Pätkové písmo kurzívou = pocity (vety, nadpisy) */
-.pocit,
-.nadpis,
-.hero__mena,
-.paticka__nadpis {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-}
-
-.pocit {
-  max-width: 34rem;
-  margin: 1.25rem auto 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.amp {
-  font-family: var(--mono);
-  font-style: normal;
-  font-weight: 500;
-  color: var(--med);
-}
-
 .stitok {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--text-jemny);
 }
 
 .nadpis {
-  margin: 0.6rem 0 0;
-  font-size: clamp(2.2rem, 6vw, 3rem);
-  line-height: 1.1;
+  margin: 0.25rem 0 0;
+  font-family: var(--pismo-pisane);
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 4rem);
+  line-height: 1.2;
 }
 
-.poznamka,
-.komentar {
-  margin: 1.25rem 0 0;
+.text {
+  max-width: 34rem;
+  margin: 1.25rem auto 0;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.poznamka {
+  margin: 1.1rem 0 0;
   font-size: 0.85rem;
+  letter-spacing: 0.04em;
   color: var(--text-jemny);
+}
+
+.amp {
+  font-family: var(--pismo);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--broskyna);
 }
 
 .tlacidlo {
   display: inline-flex;
   align-items: center;
-  min-height: 48px;
+  min-height: 50px;
   margin-top: 2rem;
-  padding: 0 1.75rem;
+  padding: 0 2rem;
   border-radius: 999px;
-  background: var(--med);
-  color: #FFFDF8;
-  font-size: 0.9rem;
+  background: var(--tlacidlo);
+  color: #FFFFFF;
+  font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   text-decoration: none;
   transition: opacity 0.2s;
 }
@@ -100,9 +101,9 @@ a { color: var(--med); }
 .nav { border-bottom: 1px solid var(--linka); }
 
 .nav__inner {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -111,74 +112,90 @@ a { color: var(--med); }
 }
 
 .nav__logo {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.4rem;
+  font-family: var(--pismo-pisane);
+  font-size: 1.9rem;
+  line-height: 1.2;
   color: var(--text);
   text-decoration: none;
 }
-.nav__logo .amp { font-size: 0.95rem; }
 
 .nav__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.25rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  gap: 0.25rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 .nav__links a {
   padding: 0.6rem 0;
   color: var(--text);
   text-decoration: none;
 }
-.nav__links a:hover { color: var(--med); }
-.nav__links .nav__cta { color: var(--med); font-weight: 500; }
+.nav__links a:hover { color: var(--tlacidlo); }
+.nav__links .nav__cta { color: var(--tlacidlo); }
 
 /* ---------- úvod ---------- */
 
 .hero {
   max-width: 960px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 5.5rem;
+  padding: 3rem 1.5rem 6rem;
   text-align: center;
 }
 
-.hero__kytica {
+.hero__luka {
   display: block;
   width: 100%;
-  max-width: 440px;
+  max-width: 620px;
   height: auto;
   margin: 0 auto;
 }
 
 .hero__mena {
-  margin: 2.25rem 0 0;
-  font-size: clamp(3rem, 10vw, 4.5rem);
-  line-height: 1.1;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0 1.4rem;
+  font-family: var(--pismo-pisane);
+  font-weight: 400;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  line-height: 1.2;
 }
-.hero__mena .amp { font-size: 0.42em; margin: 0 0.3em; vertical-align: middle; }
 
-.hero__veta { font-size: clamp(1.15rem, 3vw, 1.35rem); }
+.hero__veta {
+  max-width: 32rem;
+  margin: 1rem auto 0;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 2.6vw, 1.15rem);
+  line-height: 1.75;
+}
 
-.hero__datum {
-  margin: 1.75rem 0 0;
-  font-size: 1.1rem;
+.datum {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.datum p {
+  margin: 0;
+  font-size: 0.88rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
 }
+.datum__ciara { width: 56px; height: 1px; background: var(--salvia); }
 
-.hero__miesto {
-  margin: 0.4rem 0 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: var(--text-jemny);
-}
+.hero__miesto { margin: 0.5rem 0 0; font-size: 1rem; letter-spacing: 0.04em; }
 
 /* ---------- sekcie ---------- */
 
 .sekcia { border-top: 1px solid var(--linka); }
-.sekcia--tonovana { background: var(--papier-tmavsi); }
+.sekcia--tonovana { background: var(--papier-tonovany); }
 
 .sekcia__obsah {
   max-width: 720px;
@@ -188,32 +205,33 @@ a { color: var(--med); }
 }
 .sekcia__obsah--siroka { max-width: 880px; }
 
-.adresa { margin: 1rem 0 0; font-size: 0.95rem; }
-
 /* ---------- program ---------- */
 
 .program {
   list-style: none;
-  margin: 2.75rem 0 0;
+  margin: 2.25rem 0 0;
   padding: 0;
-  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 .program li {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr;
-  gap: 1.25rem;
-  align-items: baseline;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--linka);
+  padding: 1.5rem 1.25rem;
+  background: var(--papier);
+  border: 1px solid var(--linka);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
-.program__cas { font-size: 1.05rem; font-weight: 500; color: var(--med); }
-.program__co {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.35rem;
-  line-height: 1.35;
+.program__cas {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--tlacidlo);
 }
+.program__co { font-weight: 300; font-size: 1.05rem; line-height: 1.4; }
 
 /* ---------- mapa a formulár ---------- */
 
@@ -223,18 +241,17 @@ a { color: var(--med); }
   height: 360px;
   margin-top: 2.25rem;
   border: 0;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .formular { margin-top: 2.5rem; text-align: left; }
 
-/* Dočasný rámik, kým nevložíš skutočnú mapu / formulár */
+/* Dočasný rámik, kým nevložíš skutočnú mapu */
 .mapa--placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px dashed #CDBFA8;
-  border-radius: 12px;
+  border: 1px dashed var(--salvia);
   padding: 1.5rem;
   font-size: 0.85rem;
   color: var(--text-jemny);
@@ -247,6 +264,11 @@ a { color: var(--med); }
   padding: 4.5rem 1.5rem 4rem;
   text-align: center;
 }
-.paticka__hanae { width: 96px; height: 96px; }
-.paticka__nadpis { margin: 0.5rem 0 0; font-size: 1.9rem; }
-.paticka .komentar { margin-top: 0.4rem; }
+.paticka__hanae { width: 80px; height: 80px; }
+.paticka__nadpis {
+  margin: 0.25rem 0 0;
+  font-family: var(--pismo-pisane);
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
+.paticka .poznamka { margin-top: 0.4rem; }
