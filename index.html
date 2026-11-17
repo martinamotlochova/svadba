@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martina &amp; Filip · 15. 5. 2027</title>
+  <meta name="description" content="Svadba Martiny a Filipa – Kaštieľ v Krasňanoch, 15. 5. 2027">
+
+  <!-- Písma z Google Fonts: IBM Plex Mono (fakty) + IBM Plex Serif (pocity) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGÁCIA ===== -->
+  <nav class="nav" aria-label="Hlavná navigácia">
+    <div class="nav__inner">
+      <a href="#domov" class="nav__logo">M <span class="amp">&amp;&amp;</span> F</a>
+      <div class="nav__links">
+        <a href="#program">Program</a>
+        <a href="#miesto">Miesto</a>
+        <a href="#ubytovanie">Ubytovanie</a>
+        <a href="#dary">Dary</a>
+        <a href="#rsvp" class="nav__cta">Potvrdiť účasť</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== ÚVOD ===== -->
+  <header id="domov" class="hero">
+    <img src="images/kytica.svg" alt="" class="hero__kytica">
+
+    <h1 class="hero__mena">Martina <span class="amp">&amp;&amp;</span> Filip</h1>
+
+    <p class="pocit hero__veta">
+      S radosťou oznamujeme, že nechceme žiť jeden bez druhého,
+      a preto si povieme svoje áno.
+    </p>
+
+    <p class="hero__datum">15.05.2027 · 14:00</p>
+    <p class="hero__miesto">Kaštieľ v Krasňanoch</p>
+
+    <!-- Číslo dopĺňa script.js -->
+    <p class="komentar">// do svadby zostáva <span id="odpocet">…</span> dní</p>
+
+    <a href="#rsvp" class="tlacidlo">Potvrdiť účasť</a>
+  </header>
+
+  <!-- ===== PROGRAM ===== -->
+  <section id="program" class="sekcia">
+    <div class="sekcia__obsah">
+      <p class="stitok">Program</p>
+      <h2 class="nadpis">Náš deň</h2>
+
+      <ul class="program">
+        <li><span class="program__cas">13:30</span><span class="program__co">Príchod hostí a welcome drink</span></li>
+        <li><span class="program__cas">14:00</span><span class="program__co">Obrad</span></li>
+        <li><span class="program__cas">15:30</span><span class="program__co">Uvítanie novomanželov</span></li>
+        <li><span class="program__cas">16:00</span><span class="program__co">Obed</span></li>
+        <li><span class="program__cas">17:30</span><span class="program__co">Prvý tanec a zábava</span></li>
+        <li><span class="program__cas">22:30</span><span class="program__co">Tombola</span></li>
+      </ul>
+      <p class="poznamka">Časy sa ešte môžu mierne posunúť.</p>
+    </div>
+  </section>
+
+  <!-- ===== MIESTO ===== -->
+  <section id="miesto" class="sekcia">
+    <div class="sekcia__obsah sekcia__obsah--siroka">
+      <p class="stitok">Miesto</p>
+      <h2 class="nadpis">Kaštieľ v Krasňanoch</h2>
+      <p class="adresa">[Adresa kaštieľa]</p>
+      <p class="pocit">Obrad, hostina aj zábava budú na jednom mieste – nikam sa nepresúvame.</p>
+
+      <!--
+        MAPA: Na Google Maps nájdi kaštieľ → Zdieľať → Vložiť mapu → skopíruj <iframe>
+        a vlož ho namiesto tohto <div>-u. Atribút width/height nahraď class="mapa".
+      -->
+      <div class="mapa mapa--placeholder">[Mapa – vložíme z Google Maps]</div>
+
+      <p class="poznamka">Parkovanie: [info o parkovaní]</p>
+    </div>
+  </section>
+
+  <!-- ===== UBYTOVANIE ===== -->
+  <section id="ubytovanie" class="sekcia">
+    <div class="sekcia__obsah">
+      <p class="stitok">Ubytovanie</p>
+      <h2 class="nadpis">Zostaňte s nami</h2>
+      <p class="pocit">
+        Pre tých, ktorým sme ubytovanie ponúkli, je na noc z 15. na 16. mája
+        pripravená izba priamo na kaštieli. Vo formulári nám prosím dajte vedieť, či prespíte.
+      </p>
+      <p class="poznamka">Check-in od [čas]</p>
+    </div>
+  </section>
+
+  <!-- ===== DARY ===== -->
+  <section id="dary" class="sekcia">
+    <div class="sekcia__obsah">
+      <p class="stitok">Dary</p>
+      <h2 class="nadpis">Stačí, že prídete</h2>
+      <p class="pocit">
+        Najväčším darom bude, že tento deň strávite s nami. Nič nepotrebujeme –
+        ak by ste nás však chceli obdarovať, potešíme sa príspevku do rozpočtu
+        na náš spoločný život.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== POTVRDENIE ÚČASTI ===== -->
+  <section id="rsvp" class="sekcia sekcia--tonovana">
+    <div class="sekcia__obsah">
+      <p class="stitok">Potvrdenie účasti</p>
+      <h2 class="nadpis">Prídete?</h2>
+      <p class="poznamka">Prosíme, odpovedzte do [dátum].</p>
+
+      <!--
+        FORMULÁR Z TALLY:
+        1. Na tally.so vytvor formulár s otázkami:
+           Meno a priezvisko · Prídete? (Áno / Nie) · Počet osôb ·
+           Prespíte na kaštieli? (Áno / Nie) · Strava a alergie · Odkaz pre nás
+        2. Publish → Embed → Standard → skopíruj kód
+        3. Vlož ho sem namiesto <div class="formular">…</div>
+      -->
+      <div class="formular mapa--placeholder">[Sem vložíme formulár z Tally]</div>
+    </div>
+  </section>
+
+  <!-- ===== PÄTIČKA ===== -->
+  <footer class="paticka">
+    <img src="images/hanae.svg" alt="" class="paticka__hanae">
+    <p class="paticka__nadpis">Tešíme sa na vás</p>
+    <p class="komentar">Martina, Filip + Hanae</p>
+    <p class="poznamka">Otázky? Napíšte nám na [e-mail] alebo zavolajte na [telefón].</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
