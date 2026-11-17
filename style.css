@@ -226,7 +226,7 @@ a { color: var(--med); }
   border-radius: 12px;
 }
 
-.formular { margin-top: 2.5rem; min-height: 420px; }
+.formular { margin-top: 2.5rem; text-align: left; }
 
 /* Dočasný rámik, kým nevložíš skutočnú mapu / formulár */
 .mapa--placeholder {
